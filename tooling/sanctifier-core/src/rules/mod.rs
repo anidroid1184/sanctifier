@@ -8,6 +8,7 @@ pub mod division_by_zero;
 pub mod eager_unwrap_or;
 pub mod edge_amount;
 pub mod error_code_collision;
+pub mod event_data_cast;
 pub mod excessive_clone;
 pub mod fee_rounding;
 pub mod hardcoded_addr;
@@ -174,6 +175,7 @@ impl RuleRegistry {
         registry.register(missing_ttl::MissingTtlRule::new());
         registry.register(arg_dos::ArgDosRule::new());
         registry.register(sanct_unwrap::SanctUnwrapRule::new());
+        registry.register(event_data_cast::EventDataCastRule::new());
         registry.register(init_hardcoded_admin::InitHardcodedAdminRule::new());
         registry.register(shift_overflow::ShiftOverflowRule::new());
         registry.register(unbounded_storage::UnboundedStorageRule::new());
